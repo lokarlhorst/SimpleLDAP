@@ -32,18 +32,20 @@ $ldap = new LDAP('192.168.0.1', 389, 3); // Host, port and server protocol (this
 $ldap->dn = 'ou=users,dc=demo,dc=com'; // The default DN (Distinguished Name)
 ```
 
-That's it. Now you're able to connect and authenticate to an LDAP server. 
+That's it. Now you're able to connect and authenticate to an LDAP server. One last thing: you'll have to bind as an user with administrative rights in order to bring user information. That's what the ADN and APass properties are for. 
 
 ```php
 $ldap = new LDAP('192.168.0.1', 389, 3);
 $ldap->dn = 'ou=users,dc=demo,dc=com';
+$ldap->adn = 'cn=admin,dc=demo,dc=com';
+$ldap->apass = '987654';
 print_r($ldap->auth('demo', 123456));
 ```
 
 The auth method will return the user information as an array if the authentication is successful, and false if it wasn't.
 
 ###CRUD Actions
-If you want to perform administrative actions on the server, such as CRUD, you'll have to bind as an user with administrative rights. That's what the ADN and APass properties are for. They are required for the CRUD actions to be performed correctly. 
+SimpleLDAP allows you to easily perform CRUD actions on specified directory. 
 
 ```php
 $ldap = new LDAP('192.168.0.1', 389, 3);
