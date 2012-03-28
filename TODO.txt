@@ -1,9 +1,0 @@
-SimpleLDAP 0.1
-==========
-
-TODO list: 
- - better comments for the code, not just methods and properties
- - create a better documentation
- - error handling can be improved, should focus on that
- - new features can be made, but always remembering of the library name... SimpleLDAP
- - test, test, test

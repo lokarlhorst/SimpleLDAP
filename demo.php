@@ -1,6 +1,6 @@
 <?php
 
-require('LDAP.class.php');
+require('SimpleLDAP.php');
 
 $ldap = new LDAP('192.168.0.1', 389, 3); // Host, port and server protocol (this one is optional)
 $ldap->dn = 'ou=users,dc=demo,dc=com'; // The default DN (Distinguished Name)
