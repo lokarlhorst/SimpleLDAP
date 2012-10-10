@@ -2,7 +2,7 @@
 
 require('SimpleLDAP.php');
 
-$ldap = new LDAP('192.168.0.1', 389, 3); // Host, port and server protocol (this one is optional)
+$ldap = new SimpleLDAP('192.168.0.1', 389, 3); // Host, port and server protocol (this one is optional)
 $ldap->dn = 'ou=users,dc=demo,dc=com'; // The default DN (Distinguished Name)
 $ldap->adn = 'cn=admin,dc=demo,dc=com'; // The admin DN
 $ldap->apass = '987654'; // The admin password
